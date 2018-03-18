@@ -1,0 +1,18 @@
+PODS:
+  - PKHUD (5.0.0)
+  - Socket.IO-Client-Swift (13.1.2):
+    - Starscream (~> 3.0.2)
+  - Starscream (3.0.4)
+
+DEPENDENCIES:
+  - PKHUD (~> 5.0)
+  - Socket.IO-Client-Swift (~> 13.1.0)
+
+SPEC CHECKSUMS:
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  Socket.IO-Client-Swift: 010d2f464bdd1849b859c0cd0500d68194401ac8
+  Starscream: f5da93fe6984c77b694366bf7299b7dc63a76f26
+
+PODFILE CHECKSUM: b558ad29006b9eae830095ad1bbaa4688cb5432b
+
+COCOAPODS: 1.4.0

@@ -1,0 +1,6 @@
+framework module Pods_CXE_Fixer {
+  umbrella header "Pods-CXE Fixer-umbrella.h"
+
+  export *
+  module * { export * }
+}
