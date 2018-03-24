@@ -52,8 +52,6 @@ class WorkOrdersTableViewController: UITableViewController {
         super.viewDidLoad()
         self.sortData()
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-        let shared = ServerCommunicator.shared
-        shared.enableSocketIO()
     }
 
     override func didReceiveMemoryWarning() {

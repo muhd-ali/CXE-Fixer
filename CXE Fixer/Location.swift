@@ -59,6 +59,7 @@ class Location: NSObject {
                     self.isAvailable = true
                     self.delegate?.locationIsAvailable()
                 }
+                ServerCommunicator.shared.send(location: self.json)
             }
         }
         
