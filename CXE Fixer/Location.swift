@@ -59,6 +59,7 @@ class Location: NSObject {
                     self.isAvailable = true
                     self.delegate?.locationIsAvailable()
                 }
+                WorkOrders.shared.updateOrder()
                 ServerCommunicator.shared.send(location: self.json)
             }
         }
@@ -84,5 +85,12 @@ class Location: NSObject {
     
     init(coordinates: CLLocationCoordinate2D) {
         self.coordinates = coordinates
+        super.init()
+    }
+    
+    init(from json: [String: Any]) {
+        let coordinatesInJson = json["gps"] as! [String:Double]
+        self.coordinates = CLLocationCoordinate2D(latitude: coordinatesInJson["latitude"]!, longitude: coordinatesInJson["longitude"]!)
+        super.init()
     }
 }

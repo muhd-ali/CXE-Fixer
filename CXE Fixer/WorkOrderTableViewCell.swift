@@ -22,8 +22,8 @@ class WorkOrderTableViewCell: UITableViewCell {
     }
     
     private func updateUI(with workOrder: WorkOrder) {
-        self.problemTypeLabel.text = workOrder.problemType
-        self.departmentLabel.text = workOrder.department
+        self.problemTypeLabel.text = workOrder.problemType.title
+        self.departmentLabel.text = workOrder.department.title
         var distanceText = "cannot calculate distance"
         if let distanceInMeters = workOrder.location.distance {
             let distanceInMiles = distanceInMeters / 1609.344

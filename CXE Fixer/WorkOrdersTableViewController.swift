@@ -11,46 +11,11 @@ import CoreLocation
 
 class WorkOrdersTableViewController: UITableViewController {
     
-    var data: [WorkOrder] = [
-        WorkOrder(
-            server_id: "w0",
-            department: "Cleaning Dept",
-            problemType: "Spill",
-            location: Location(
-                coordinates: CLLocationCoordinate2D(
-                    latitude: 31.5204,
-                    longitude: 74.3587
-                )
-            ),
-            note: "Hey Boy. What's up?"
-        ),
-        WorkOrder(
-            server_id: "w1",
-            department: "Electrical Management",
-            problemType: "Elevator Malfunction",
-            location: Location(
-                coordinates: CLLocationCoordinate2D(
-                    latitude: 32.7767,
-                    longitude: -96.7970
-                )
-            ),
-            note: "Hey Boy. What's up?"
-        )
-    ]
-    
-    private func sortData() {
-        data = data.sorted(by: { (wo1, wo2) -> Bool in
-            if let d1 = wo1.location.distance,
-               let d2 = wo2.location.distance {
-               return d1 < d2
-            }
-            return true
-        })
-    }
+    var data: [WorkOrder] = WorkOrders.shared.list
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sortData()
+        WorkOrders.shared.delegate = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 
@@ -83,3 +48,9 @@ class WorkOrdersTableViewController: UITableViewController {
     }
 }
 
+extension WorkOrdersTableViewController: WorkOrdersDelegate {
+    func listUpdated(to list: [WorkOrder]) {
+        self.data = list
+        self.tableView.reloadData()
+    }
+}

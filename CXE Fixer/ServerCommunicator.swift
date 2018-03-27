@@ -42,6 +42,8 @@ class ServerCommunicator: NSObject {
 
         self.socket.on(clientEvent: .connect) {data, ack in
             print("Connected to \(Server.url)")
+            let location = Location.GPS.shared.json
+            self.send(location: location)
         }
         
         self.socket.connect()
@@ -50,7 +52,8 @@ class ServerCommunicator: NSObject {
     
     func addNewReportEvent(on socket: SocketIOClient) {
         socket.on("newReport") { (data, ack) in
-            print(data)
+            let workOrder = WorkOrder(from: data[0] as! [String:Any])
+            WorkOrders.shared.sorted(insert: workOrder)
         }
     }
     

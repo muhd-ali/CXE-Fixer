@@ -10,6 +10,12 @@
 		4106053E205F23800000A198 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4106053D205F23800000A198 /* AppDelegate.swift */; };
 		41060540205F241C0000A198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4106053F205F241C0000A198 /* Main.storyboard */; };
 		411BDF1D205C6185002F12C6 /* ServerCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411BDF1C205C6185002F12C6 /* ServerCommunicator.swift */; };
+		4128D0C62069FD4B00888540 /* WorkOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4128D0C52069FD4B00888540 /* WorkOrders.swift */; };
+		4128D0C9206A226100888540 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4128D0C7206A226100888540 /* Department.swift */; };
+		4128D0CA206A226100888540 /* ProblemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4128D0C8206A226100888540 /* ProblemType.swift */; };
+		4128D0CD206A22AA00888540 /* Selectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4128D0CB206A22AA00888540 /* Selectable.swift */; };
+		4128D0CE206A22AA00888540 /* LeafItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4128D0CC206A22AA00888540 /* LeafItem.swift */; };
+		4128D0D0206A22BE00888540 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4128D0CF206A22BE00888540 /* Category.swift */; };
 		4183A842204E49AC001D86B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4183A841204E49AC001D86B6 /* Assets.xcassets */; };
 		4183A845204E49AC001D86B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4183A843204E49AC001D86B6 /* LaunchScreen.storyboard */; };
 		4183A84E204E5089001D86B6 /* WorkOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4183A84D204E5089001D86B6 /* WorkOrdersTableViewController.swift */; };
@@ -25,6 +31,12 @@
 		4106053D205F23800000A198 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4106053F205F241C0000A198 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		411BDF1C205C6185002F12C6 /* ServerCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCommunicator.swift; sourceTree = "<group>"; };
+		4128D0C52069FD4B00888540 /* WorkOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOrders.swift; sourceTree = "<group>"; };
+		4128D0C7206A226100888540 /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		4128D0C8206A226100888540 /* ProblemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemType.swift; sourceTree = "<group>"; };
+		4128D0CB206A22AA00888540 /* Selectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selectable.swift; sourceTree = "<group>"; };
+		4128D0CC206A22AA00888540 /* LeafItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeafItem.swift; sourceTree = "<group>"; };
+		4128D0CF206A22BE00888540 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4183A837204E49AC001D86B6 /* CXE Fixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CXE Fixer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4183A841204E49AC001D86B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4183A844204E49AC001D86B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,6 +102,11 @@
 		4183A839204E49AC001D86B6 /* CXE Fixer */ = {
 			isa = PBXGroup;
 			children = (
+				4128D0CF206A22BE00888540 /* Category.swift */,
+				4128D0CC206A22AA00888540 /* LeafItem.swift */,
+				4128D0CB206A22AA00888540 /* Selectable.swift */,
+				4128D0C7206A226100888540 /* Department.swift */,
+				4128D0C8206A226100888540 /* ProblemType.swift */,
 				4183A859204E7128001D86B6 /* BootViewController.swift */,
 				4183A84D204E5089001D86B6 /* WorkOrdersTableViewController.swift */,
 				4183A855204E6B91001D86B6 /* WorkOrderTableViewCell.swift */,
@@ -99,6 +116,7 @@
 				4183A853204E6057001D86B6 /* Constant.swift */,
 				411BDF1C205C6185002F12C6 /* ServerCommunicator.swift */,
 				4106053F205F241C0000A198 /* Main.storyboard */,
+				4128D0C52069FD4B00888540 /* WorkOrders.swift */,
 			);
 			path = "CXE Fixer";
 			sourceTree = "<group>";
@@ -247,14 +265,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4128D0CE206A22AA00888540 /* LeafItem.swift in Sources */,
 				4106053E205F23800000A198 /* AppDelegate.swift in Sources */,
 				4183A85A204E7128001D86B6 /* BootViewController.swift in Sources */,
 				4183A850204E5141001D86B6 /* WorkOrder.swift in Sources */,
+				4128D0CD206A22AA00888540 /* Selectable.swift in Sources */,
+				4128D0CA206A226100888540 /* ProblemType.swift in Sources */,
 				411BDF1D205C6185002F12C6 /* ServerCommunicator.swift in Sources */,
 				4183A854204E6057001D86B6 /* Constant.swift in Sources */,
+				4128D0C62069FD4B00888540 /* WorkOrders.swift in Sources */,
 				4183A856204E6B91001D86B6 /* WorkOrderTableViewCell.swift in Sources */,
+				4128D0C9206A226100888540 /* Department.swift in Sources */,
 				4183A852204E5605001D86B6 /* Location.swift in Sources */,
 				4183A84E204E5089001D86B6 /* WorkOrdersTableViewController.swift in Sources */,
+				4128D0D0206A22BE00888540 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
