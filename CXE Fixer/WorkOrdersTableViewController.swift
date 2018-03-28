@@ -17,6 +17,8 @@ class WorkOrdersTableViewController: UITableViewController {
         super.viewDidLoad()
         WorkOrders.shared.delegate = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.title = "Work Orders"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +46,16 @@ class WorkOrdersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Constant.rowHeight
+        return 2 * Constant.rowHeight
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showWorkOrderViewController") {
+            if let dvc = segue.destination as? WorkOrderViewController,
+               let indexPath = self.tableView.indexPathForSelectedRow {
+                dvc.workOrder = self.data[indexPath.row]
+            }
+        }
     }
 }
 

@@ -15,6 +15,33 @@ class WorkOrder: NSObject {
     let location: Location
     let note: String
     
+    enum Field {
+        case department
+        case problemType
+        case location
+        case note
+        
+        var description: String {
+            switch self {
+            case .department:
+                return "Department"
+            case .problemType:
+                return "Problem Type"
+            case .location:
+                return "Location"
+            case .note:
+                return "Note"
+            }
+        }
+    }
+    
+    var similarFields: [Field:LeafItem] {
+        return [
+        .department: self.department,
+        .problemType: self.problemType,
+        ]
+    }
+    
     init(server_id: String, department: String, problemType: String, location: Location, note: String) {
         self.server_id = server_id
         self.department = Department(server_id: "", title: department)

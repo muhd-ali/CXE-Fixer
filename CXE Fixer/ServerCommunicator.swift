@@ -52,7 +52,8 @@ class ServerCommunicator: NSObject {
     
     func addNewReportEvent(on socket: SocketIOClient) {
         socket.on("newReport") { (data, ack) in
-            let workOrder = WorkOrder(from: data[0] as! [String:Any])
+            let json = data[0] as! [String:Any]
+            let workOrder = WorkOrder(from: json)
             WorkOrders.shared.sorted(insert: workOrder)
         }
     }

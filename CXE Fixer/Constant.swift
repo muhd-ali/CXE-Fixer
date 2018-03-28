@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 class Constant {
-    static let rowHeight: CGFloat = 120
+    static let rowHeight: CGFloat = 60
 }

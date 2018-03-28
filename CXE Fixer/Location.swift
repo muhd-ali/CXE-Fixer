@@ -70,6 +70,7 @@ class Location: NSObject {
     }
 
     let coordinates: CLLocationCoordinate2D
+    let specificsJson: [String:String]
     var distance: Double? {
         if let myLocation = GPS.shared.location {
             let workLocation = CLLocation(
@@ -83,14 +84,29 @@ class Location: NSObject {
         return nil
     }
     
-    init(coordinates: CLLocationCoordinate2D) {
+    var specificsString: String {
+        var str = ""
+        print("spec json: \(self.specificsJson)")
+        for (title, option) in self.specificsJson {
+            if str.isEmpty {
+                str = title + " - " + option
+            } else {
+                str = str + ", " + title + " - " + option
+            }
+        }
+        return str
+    }
+    
+    init(coordinates: CLLocationCoordinate2D, specificsJson: [String:String]) {
         self.coordinates = coordinates
+        self.specificsJson = specificsJson
         super.init()
     }
     
     init(from json: [String: Any]) {
         let coordinatesInJson = json["gps"] as! [String:Double]
         self.coordinates = CLLocationCoordinate2D(latitude: coordinatesInJson["latitude"]!, longitude: coordinatesInJson["longitude"]!)
+        self.specificsJson = json["specifics"] as! [String:String]
         super.init()
     }
 }

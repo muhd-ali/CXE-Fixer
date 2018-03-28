@@ -26,7 +26,11 @@ class WorkOrders: NSObject {
                 coordinates: CLLocationCoordinate2D(
                     latitude: 31.5204,
                     longitude: 74.3587
-                )
+                ),
+                specificsJson: [
+                    "Terminal": "C",
+                    "Gate": "1",
+                ]
             ),
             note: "Hey Boy. What's up?"
         ),
@@ -38,7 +42,11 @@ class WorkOrders: NSObject {
                 coordinates: CLLocationCoordinate2D(
                     latitude: 32.7767,
                     longitude: -96.7970
-                )
+                ),
+                specificsJson: [
+                    "Terminal": "E",
+                    "Gate": "5",
+                ]
             ),
             note: "Hey Boy. What's up?"
         )
@@ -63,7 +71,7 @@ class WorkOrders: NSObject {
         return sorted
     }
     
-    func sorted(insert workOrder: WorkOrder) {
+    func sorted(insert workOrder: WorkOrder) -> Int {
         self.list.append(workOrder)
         var index = self.list.count - 1
         while (index > 0) {
@@ -81,5 +89,6 @@ class WorkOrders: NSObject {
             }
             index-=1
         }
+        return index
     }
 }
