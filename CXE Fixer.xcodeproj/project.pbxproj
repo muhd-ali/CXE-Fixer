@@ -147,7 +147,6 @@
 				4183A834204E49AC001D86B6 /* Frameworks */,
 				4183A835204E49AC001D86B6 /* Resources */,
 				A463871F2560C4BB5904E4A5 /* [CP] Embed Pods Frameworks */,
-				CCA0607FD96396D9BB16DBC2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,21 +243,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CXE Fixer/Pods-CXE Fixer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CCA0607FD96396D9BB16DBC2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CXE Fixer/Pods-CXE Fixer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
